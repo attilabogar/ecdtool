@@ -2,6 +2,12 @@
 
 Tool for Working with CUE+FLAC CD Images
 
+[![Build Status][1]][2]
+
+[1]: https://travis-ci.org/attilabogar/ecdtool.svg?branch=master
+[2]: https://travis-ci.org/attilabogar/ecdtool
+
+
 ## Use Cases
 
   - Rename UTF-8 track names to ASCII file naming
