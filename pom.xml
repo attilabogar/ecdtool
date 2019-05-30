@@ -6,9 +6,14 @@
   <packaging>jar</packaging>
   <version>0.4-SNAPSHOT</version>
   <name>eCD Tool</name>
-  <url>http://maven.apache.org</url>
+  <url>https://github.com/attilabogar/ecdtool</url>
   <properties>
     <jdk.version>1.8</jdk.version>
+    <sonar.host.url>https://sonarcloud.io</sonar.host.url>
+    <sonar.projectKey>attilabogar_ecdtool</sonar.projectKey>
+    <sonar.organization>attilabogar-github</sonar.organization>
+    <sonar.language>java</sonar.language>
+    <sonar.scm.provider>git</sonar.scm.provider>	    
   </properties>
   <build>
     <plugins>
@@ -48,11 +53,39 @@
       <version>3.8.1</version>
       <scope>test</scope>
     </dependency>
-	<!-- https://mvnrepository.com/artifact/org.jflac/jflac-codec -->
+    <!-- https://mvnrepository.com/artifact/org.jflac/jflac-codec -->
     <dependency>
-	    <groupId>org.jflac</groupId>
-	    <artifactId>jflac-codec</artifactId>
-	    <version>1.5.2</version>
+      <groupId>org.jflac</groupId>
+        <artifactId>jflac-codec</artifactId>
+        <version>1.5.2</version>
     </dependency>
   </dependencies>
+  <profiles>
+    <profile>
+      <id>coverage</id>
+      <build>
+        <plugins>
+          <plugin>
+            <groupId>org.jacoco</groupId>
+            <artifactId>jacoco-maven-plugin</artifactId>
+            <version>0.8.4</version>
+            <executions>
+              <execution>
+                <id>prepare-agent</id>
+                <goals>
+                  <goal>prepare-agent</goal>
+                </goals>
+              </execution>
+              <execution>
+                <id>report</id>
+                <goals>
+                  <goal>report</goal>
+                </goals>
+              </execution>
+            </executions>
+          </plugin>
+        </plugins>
+      </build>
+    </profile>
+  </profiles>
 </project>
