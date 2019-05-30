@@ -4,11 +4,14 @@ Tool for Working with CUE+FLAC CD Images
 
 [![Build Status][1]][2]
 [![SonarCloud Status][3]][4]
+[![Coverage Status][5]][6]
 
 [1]: https://travis-ci.org/attilabogar/ecdtool.svg?branch=master
 [2]: https://travis-ci.org/attilabogar/ecdtool
 [3]: https://sonarcloud.io/api/project_badges/measure?project=attilabogar_ecdtool&metric=alert_status
 [4]: https://sonarcloud.io/dashboard?id=attilabogar_ecdtool
+[5]: https://codecov.io/gh/attilabogar/ecdtool/branch/master/graph/badge.svg
+[6]: https://codecov.io/gh/attilabogar/ecdtool
 
 
 ## Use Cases
