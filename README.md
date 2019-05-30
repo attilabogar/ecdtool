@@ -16,25 +16,29 @@ Tool for Working with CUE+FLAC CD Images
 
 ## Use Cases
 
-  - Rename UTF-8 track names to ASCII file naming
-  - Fix CD' pressing offset
-  - Dump eCD into cue+wav, which can burned with cdrdao
-    optionally balancing the cd burner's write offset
+  - Rename i18n track names to ASCII
+  - Export an eCD to a single cue+wav image (can be burned to CD-ROM w/ `cdrdao`)
 
-# How to create an eCD?
+
+## How to create an eCD?
 
   - [EAC](http://exactaudiocopy.de/)
-  - [dBpoweramp](https://www.dbpoweramp.com/cd-ripper.htm)
+  - [dBpoweramp](https://www.dbpoweramp.com/cd-ripper.htm) (optional)
 
-To create a cue sheet of an Audio CD, start EAC and select from the menu:
+### Setup Exact Audio Copy
+
+  - Use FLAC compression during the initial EAC setup wizard
+  - EAC -> EAC Options -> Filename -> Naming scheme: %tracknr2% %title%
+
+### Create eCD
+
+  Start EAC and select from the menu:
   - Action -> Create CUE Sheet -> Current Gap Settings
+  - Action -> Copy Selected Tracks -> Compressed
 
-For the flac files use naming scheme: %tracknr2% %title%
+  Optionally dBpoweramp may be used to copy the audio tracks in FLAC format
 
-Alternatively dump the flac files using dBpoweramp using the corresponding file
-naming scheme.
-
-## An sample eCD looks like:
+## eCD directory tree example:
 
 ```
 Favourite Artist - 2015 - Debut Album:
@@ -46,21 +50,49 @@ Favourite Artist - 2015 - Debut Album:
 └── Debut Album.cue
 ```
 
+
 ## Building
 
   - `git clone https://github.com/attilabogar/ecdtool.git`
   - `cd ecdtool`
   - `mvn package`
 
+
+## Running
+
+  `java -jar target/ecdtool-0.4-SNAPSHOT-jar-with-dependencies.jar`
+
+
+## Status
+
+Prototype - Work in Progress
+
+
+## TODO
+
+  - drop unused functions
+  - drop CueSheet/DCP  
+  - add buttons:
+    - export cue+wav
+    - apply rename
+    - load current filenames
+    - auto-correct filenames
+  - export i18n mappings
+  - add tests
+  - AccurateRip support?
+
+
 ## Contributors
 
   - Attila Bogár
   - Csaba Soti
 
+
 ## Credits
 
   - [open iconic](https://useiconic.com/open/)
   - [jFLAC](http://jflac.sourceforge.net/)
+
 
 ## License
 
