@@ -28,7 +28,7 @@ Tool for Working with CUE+FLAC CD Images
 ### Setup Exact Audio Copy
 
   - Use FLAC compression during the initial EAC setup wizard
-  - EAC -> EAC Options -> Filename -> Naming scheme: %tracknr2% %title%
+  - EAC -> EAC Options -> Filename -> Naming scheme: `%tracknr2% %title%`
 
 ### Create eCD
 
